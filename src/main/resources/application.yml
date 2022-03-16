@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST}:5432/postgres
+    username: user
+    password: password
+  liquibase:
+    enabled: true
+    drop-first: false
+    change-log: classpath:changelog.xml
+    default-schema: public
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        ddl-auto: update
+        show_sql: false
+        temp:
+          use_jdbc_metadata_defaults: false
+keycloak:
+  realm: ${KEYCLOAK_REALM}
+  resource: ${KEYCLOAK_CLIENT}
+  auth-server-url: ${KEYCLOAK_AUTH_SERVER_URL}
+  public-client: true
+  ssl-required: external
+  bearer-only: true
+  enabled: true
+  use-resource-role-mappings: true
+server:
+  servlet:
+    context-path: "/api/v1"
