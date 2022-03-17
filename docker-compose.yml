@@ -12,7 +12,7 @@ services:
     volumes:
       - ./postgresql/dumps:/source/dumps
       - ./postgresql/data:/var/lib/postgresql/data
-
+#
 #  keycloak:
 #    image: jboss/keycloak:latest
 #    restart: always
@@ -21,12 +21,12 @@ services:
 #    environment:
 #      DB_VENDOR: postgres
 #      DB_ADDR: postgres
-#      DB_DATABASE: '${POSTGRES_DB}'
+#      DB_DATABASE: '${KEYCLOAK_DB}'
 #      DB_USER: '${POSTGRES_USER}'
 #      DB_SCHEMA: '${POSTGRES_SCHEMA}'
 #      DB_PASSWORD: '${POSTGRES_PASSWORD}'
-#      KEYCLOAK_USER: test
-#      KEYCLOAK_PASSWORD: password
+##      KEYCLOAK_USER: '${KEYCLOAK_USER}'
+##      KEYCLOAK_PASSWORD: '${KEYCLOAK_PASSWORD}'
 #      PROXY_ADDRESS_FORWARDING: "true"
 #    depends_on:
 #      - postgres

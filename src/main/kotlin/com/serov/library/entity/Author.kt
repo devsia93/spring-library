@@ -1,8 +1,7 @@
 package com.serov.library.entity
 
-import com.garpix.springapp.entity.base.BaseEntity
+import com.serov.library.entity.base.BaseEntityUUID
 import java.io.Serializable
-import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Table
@@ -12,4 +11,4 @@ import javax.persistence.Table
 class Author(
     @Column(name = "full_name")
     var fullName: String? = null,
-) : BaseEntity<UUID>(), Serializable
+) : BaseEntityUUID(), Serializable

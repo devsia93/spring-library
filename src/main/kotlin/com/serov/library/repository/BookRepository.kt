@@ -1,7 +1,6 @@
 package com.serov.library.repository
 
 import com.serov.library.entity.Book
-import com.serov.library.entity.base.BaseBook
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import org.springframework.data.jpa.repository.EntityGraph
@@ -10,7 +9,7 @@ import org.springframework.data.jpa.repository.Query
 import java.time.LocalDate
 import java.util.*
 
-interface BookRepository<T : BaseBook?> : JpaRepository<T, UUID?> {
+interface BookRepository<T : Book?> : JpaRepository<T, UUID?> {
     fun findByTitleContains(title: String?, pageable: Pageable?): List<T>?
 
     fun findByAuthorNameAndTitle(
